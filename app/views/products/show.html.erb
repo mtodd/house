@@ -1,4 +1,24 @@
-<h1>Products controller, show action</h1>
+<h2>New Product</h2>
 
-<p>Edit this file in <tt>app/views/products/show.html.erb</tt></p>
-<p>For more information and examples of CRUD views read <a href="http://wiki.merbivore.com/howto/crud_view_example_with_merb_using_erb"> this wiki page</a>
+<%= link_to "Back", resource(:products) %> | <%= link_to "Edit", resource(@product, :edit) %>
+
+<h3>Details</h3>
+<p>
+  Name: <%=h @product.name %>
+</p>
+<p>
+  SKU: <%=h @product.sku %>
+</p>
+
+<h3>Inventory</h3>
+<p>
+  Current Quantity: <%=h @product.inventory %>
+</p>
+
+<h3>Location</h3>
+<p>
+  Aisle: <%=h @product.aisle %>
+</p>
+<p>
+  Bin: <%=h @product.bin %>
+</p>

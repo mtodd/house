@@ -1,4 +1,32 @@
-<h1>Products controller, edit action</h1>
+<h2>Edit Product</h2>
 
-<p>Edit this file in <tt>app/views/products/edit.html.erb</tt></p>
-<p>For more information and examples of CRUD views read <a href="http://wiki.merbivore.com/howto/crud_view_example_with_merb_using_erb"> this wiki page</a>
+<%= link_to "Back", resource(@product) %>
+
+<%= form_for(@product, :action => resource(@product)) do %>
+  
+  <h3>Details</h3>
+  <p>
+    <%= text_field :name, :label => "Name" %>
+  </p>
+  <p>
+    <%= text_field :sku, :label => "SKU" %>
+  </p>
+  
+  <h3>Inventory</h3>
+  <p>
+    <%= text_field :inventory, :label => "Current Quantity" %>
+  </p>
+  
+  <h3>Location</h3>
+  <p>
+    <%= text_field :aisle, :label => "Aisle" %>
+  </p>
+  <p>
+    <%= text_field :bin, :label => "Bin" %>
+  </p>
+  
+  <p>
+    <%= submit "Save" %>
+  </p>
+  
+<% end =%>
